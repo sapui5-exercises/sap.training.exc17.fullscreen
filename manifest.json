@@ -1,0 +1,92 @@
+{
+	"_version": "1.1.0",
+	"sap.app": {
+		"_version": "1.1.0",
+		"id": "sap.training.exc17.fullscreen",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"dataSources": {
+			"TravelService": {
+				"uri": "/sap/opu/odata/sap/ZBC_TRAVEL_SRV/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0"
+				}
+			}
+		}
+	},
+	"sap.ui": {
+		"_version": "1.1.0",
+		"technology": "UI5",
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_bluecrystal"
+		]
+	},
+	"sap.ui5": {
+		"_version": "1.1.0",
+		"rootView": "sap.training.exc17.fullscreen.view.App",
+		"dependencies": {
+			"minUI5Version": "1.30",
+			"libs": {
+				"sap.m": {}
+			}
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "sap.training.exc17.fullscreen.i18n.i18n"
+				}
+			},
+			"travel": {
+				"dataSource": "TravelService"
+			}
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "sap.training.exc17.fullscreen.view",
+				"controlId": "app",
+				"controlAggregation": "pages",
+				"transition": "slide",
+				"bypassed": {
+					"target": "notFound"
+				}
+			},
+			"routes": [{
+				"pattern": "",
+				"name": "overview",
+				"target": "overview"
+			}, {
+				"pattern": "carriers/{carrierId}",
+				"name": "carrier",
+				"target": "carrier"
+			}],
+			"targets": {
+				"overview": {
+					"viewName": "Overview",
+					"viewLevel": 1
+				},
+				"carrier": {
+					"viewName": "Carrier",
+					"viewLevel": 2
+				},
+				"notFound": {
+					"viewName": "NotFound",
+					"transition": "show"
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,28 @@
+{
+  "generation": [
+    {
+      "templateId": "ui5template.basicSAPUI5ApplicationProject",
+      "templateVersion": "1.4.0",
+      "dateTimeStamp": "Thu, 24 Sep 2015 11:40:34 GMT"
+    },
+    {
+      "templateId": "servicecatalog.connectivityComponent",
+      "templateVersion": "0.0.0",
+      "dateTimeStamp": "Thu, 24 Sep 2015 11:41:30 GMT"
+    }
+  ],
+  "translation": {
+    "translationDomain": "",
+    "supportedLanguages": "en,fr,de",
+    "defaultLanguage": "en",
+    "defaultI18NPropertyFile": "i18n.properties",
+    "resourceModelName": "i18n"
+  },
+  "mockpreview": {
+    "mockUri": "/sap/opu/odata/sap/ZBC_TRAVEL_SRV",
+    "metadataFilePath": "",
+    "loadJSONFiles": false,
+    "loadCustomRequests": false,
+    "mockRequestsFilePath": ""
+  }
+}
