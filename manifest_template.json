@@ -49,7 +49,10 @@
 				}
 			},
 			"travel": {
-				"dataSource": "<...>"
+				"dataSource": "<...>",
+				"settings": {
+					"disableHeadRequestForToken": true
+				}
 			}
 		},
 		"routing": {
